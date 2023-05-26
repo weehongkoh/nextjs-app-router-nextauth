@@ -11,11 +11,11 @@ async function getProviders() {
 }
 
 export default async function SignIn() {
-  const resp: ReturnType<typeof getProviders> = await getProviders();
+  const resp: ReturnType<typeof getProviders> = (await getProviders()) || {};
 
   return (
     <div className="flex min-h-screen flex-col items-center p-24">
-      {Object.values(resp || {}).map((provider) => {
+      {Object.values(resp).map((provider) => {
         return (
           <div key={provider.id} className="[&:not(:first-child)]:mt-4">
             <LoginButton auth={provider} />

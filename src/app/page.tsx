@@ -8,9 +8,9 @@ import LoginButton from "@/components/buttons/LoginButton";
 import LogoutButton from "@/components/buttons/LogoutButton";
 
 export default async function Home() {
-  const session = await getServerSession();
+  const session = (await getServerSession()) || {};
 
-  if (Object.keys(session || {}).length !== 0) {
+  if (Object.keys(session).length !== 0) {
     redirect("/protected");
   }
 
@@ -35,7 +35,7 @@ export default async function Home() {
             />
           </a>
           <div className="px-2"></div>
-          {Object.keys(session || {}).length === 0 ? (
+          {Object.keys(session).length === 0 ? (
             <LoginButton />
           ) : (
             <LogoutButton />
