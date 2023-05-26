@@ -2,7 +2,7 @@
 
 <p align=”center”>
     <img 
-        src="https://asset.cloudinary.com/dyniiffju/e984752ed2750d28d24d21d2c8be6a84" 
+        src="https://res.cloudinary.com/dyniiffju/image/upload/v1685111477/localhost_3000__poqq9d.png" 
         alt="NextJs 13 App Router and NextAuth" 
     />
 </p>
