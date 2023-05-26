@@ -1,8 +1,7 @@
-import { NextApiRequest } from "next";
 import { getServerSession } from "next-auth";
 
-export async function GET(req: NextApiRequest) {
-  const session = await getServerSession(req);
+export async function GET() {
+  const session = await getServerSession();
 
   if (!session) {
     return new Response("Unauthorized", {
