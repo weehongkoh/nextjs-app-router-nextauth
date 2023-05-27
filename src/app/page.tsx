@@ -54,7 +54,7 @@ export default async function Home() {
         />
       </div>
 
-      <div className="grid grid-cols-2 gap-x-6">
+      <div className="grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-x-6">
         <GoogleButton />
         <DiscordButton />
       </div>

@@ -5,7 +5,7 @@ import { signIn } from "next-auth/react";
 export default function DiscordButton() {
   return (
     <button
-      className="border border-slate-300 rounded px-5 py-4 flex"
+      className="border border-slate-300 rounded px-5 py-4 flex items-center"
       onClick={() => signIn("discord")}
     >
       <svg
