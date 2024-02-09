@@ -4,7 +4,6 @@ import { redirect } from "next/navigation";
 
 import DiscordButton from "@/components/buttons/DiscordButton";
 import GoogleButton from "@/components/buttons/GoogleButton";
-import LoginButton from "@/components/buttons/LoginButton";
 import LogoutButton from "@/components/buttons/LogoutButton";
 
 export default async function Home() {
@@ -35,9 +34,7 @@ export default async function Home() {
             />
           </a>
           <div className="px-2"></div>
-          {Object.keys(session).length === 0 ? (
-            <LoginButton />
-          ) : (
+          {Object.keys(session).length !== 0 && (
             <LogoutButton />
           )}
         </div>
