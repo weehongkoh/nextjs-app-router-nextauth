@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 
 import DiscordButton from "@/components/buttons/DiscordButton";
 import GoogleButton from "@/components/buttons/GoogleButton";
+import LoginButton from "@/components/buttons/LoginButton";
 import LogoutButton from "@/components/buttons/LogoutButton";
 
 export default async function Home() {
@@ -34,7 +35,9 @@ export default async function Home() {
             />
           </a>
           <div className="px-2"></div>
-          {Object.keys(session).length !== 0 && (
+          {Object.keys(session).length === 0 ? (
+            <LoginButton />
+          ) : (
             <LogoutButton />
           )}
         </div>
@@ -50,10 +53,16 @@ export default async function Home() {
           priority
         />
       </div>
-
       <div className="grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-x-6">
         <GoogleButton />
         <DiscordButton />
+      </div>
+      <div>
+        <h2 className="text-xl font-bold mb-3">Changelog</h2>
+        <ol className="font-mono">
+          <li>09-02-2024 - Upgrade to NextJs 14</li>
+          <li>26-05-2023 - NextJs 13 and NextAuth</li>
+        </ol>
       </div>
     </main>
   );

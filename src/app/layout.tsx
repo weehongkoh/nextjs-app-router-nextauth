@@ -1,13 +1,13 @@
-import "./globals.css";
+import "@/app/globals.css";
 
 import { Inter } from "next/font/google";
-import Provider from "../components/Provider";
+import Provider from "@/components/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "NextJs 13 App Router and NextAuth",
-  description: "NextJs 13 App Router and NextAuth",
+  title: "NextJs 14 App Router and NextAuth",
+  description: "NextJs 14 App Router and NextAuth",
 };
 
 export default function RootLayout({
