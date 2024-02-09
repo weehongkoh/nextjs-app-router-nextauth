@@ -1,17 +1,19 @@
-# NextJs 13 App Router and NextAuth Boilerplate
+# NextJs 14 App Router and NextAuth Boilerplate
 
 <p align=”center”>
     <img 
-        src="https://res.cloudinary.com/dyniiffju/image/upload/v1685111477/localhost_3000__poqq9d.png" 
-        alt="NextJs 13 App Router and NextAuth" 
+        src="https://github.com/weehongayden/nextjs-app-router-nextauth/assets/105431607/2616ee26-fdaa-4db1-8508-3c8775394f5b" 
+        alt="NextJs 14 App Router and NextAuth" 
     />
 </p>
 
-This is a NextJs 13 App Router boilerplate that uses NextAuth library.
+This is a NextJs 14 App Router boilerplate that uses NextAuth library.
+
+[Demo Link](https://nextjs-app-router-nextauth.vercel.app/)
 
 ## Pages
 
-- [x] Custom Sign In Page
+
 - [x] Protected Page
 - [x] NextJs Middleware
 
