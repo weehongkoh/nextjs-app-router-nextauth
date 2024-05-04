@@ -66,6 +66,7 @@ export default async function Home() {
           Changelog
         </h2>
         <ol className="font-mono">
+          <li>04-05-2024 - Add database adapater on Custom Login</li>
           <li>06-03-2024 - Update the Landing Page and Custom Login Page</li>
           <li>06-03-2024 - Upgrade NPM Package to Latest Version</li>
           <li>09-02-2024 - Upgrade to NextJs 14</li>
