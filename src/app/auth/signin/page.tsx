@@ -1,3 +1,5 @@
+import Divider from "@/components/Divider";
+import LoginForm from "@/components/LoginForm";
 import LoginButton from "@/components/buttons/LoginButton";
 
 async function getProviders() {
@@ -14,15 +16,15 @@ export default async function SignIn() {
   const resp: ReturnType<typeof getProviders> = (await getProviders()) || {};
 
   return (
-    <div className="flex min-h-screen flex-col items-center p-24">
-      <h1 className="font-bold text-3xl mb-8">Custom Login Page</h1>
-      {Object.values(resp).map((provider) => {
-        return (
-          <div key={provider.id} className="[&:not(:first-child)]:mt-4">
-            <LoginButton auth={provider} />
-          </div>
-        );
-      })}
+    <div className="flex min-h-screen flex-col items-center mx-auto p-24 max-w-[40rem]">
+      <h1 className="font-bold text-3xl">Sign in to your account</h1>
+      <LoginForm />
+      <Divider />
+      <div className="flex flex-col items-center gap-y-4">
+        {Object.values(resp).map((provider) => (
+          <LoginButton auth={provider} key={provider.id} />
+        ))}
+      </div>
     </div>
   );
 }
