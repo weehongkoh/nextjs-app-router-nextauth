@@ -21,9 +21,12 @@ export default async function SignIn() {
       <LoginForm />
       <Divider />
       <div className="flex flex-col items-center gap-y-4">
-        {Object.values(resp).map((provider) => (
-          <LoginButton auth={provider} key={provider.id} />
-        ))}
+        {Object.values(resp).map(
+          (provider) =>
+            provider.id !== "hasura-credentials" && (
+              <LoginButton auth={provider} key={provider.id} />
+            )
+        )}
       </div>
     </div>
   );
