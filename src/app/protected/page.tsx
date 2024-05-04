@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth";
 
 export default async function Protected() {
   const session = await getServerSession();
+
   return (
     <main className="max-w-2xl min-h-screen flex flex-col items-center mx-auto">
       <div className="w-full flex justify-between my-10">
