@@ -4,6 +4,8 @@ import CryptoJS from "crypto-js";
 import { signIn } from "next-auth/react";
 import { useForm } from "react-hook-form";
 
+import Alert from "@/components/Alert";
+
 type LoginFormProps = {
   email: string;
   password: string;
@@ -31,8 +33,12 @@ export default function LoginForm() {
   });
 
   return (
-    <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form className="space-y-6" onSubmit={handleSubmit(handleSubmitForm)}>
+    <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
+      <Alert />
+      <form
+        className="mt-5 space-y-6"
+        onSubmit={handleSubmit(handleSubmitForm)}
+      >
         <div>
           <label
             htmlFor="email"
