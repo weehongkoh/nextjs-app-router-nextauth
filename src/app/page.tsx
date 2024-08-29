@@ -6,6 +6,7 @@ import DiscordButton from "@/components/buttons/DiscordButton";
 import GoogleButton from "@/components/buttons/GoogleButton";
 import LoginButton from "@/components/buttons/LoginButton";
 import LogoutButton from "@/components/buttons/LogoutButton";
+import Auth0Button from "@/components/buttons/Auth0";
 
 export default async function Home() {
   const session = (await getServerSession()) || {};
@@ -60,12 +61,14 @@ export default async function Home() {
       <div className="grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-x-6">
         <GoogleButton />
         <DiscordButton />
+        <Auth0Button />
       </div>
       <div>
         <h2 className="text-2xl font-bold mb-3 mt-8 text-center lg:mt-0">
           Changelog
         </h2>
         <ol className="font-mono">
+          <li>29-08-2024 - Add Auth0 Provider</li>
           <li>08-06-2024 - Add login credential on Custom Login</li>
           <li>04-05-2024 - Add database adapter on Custom Login</li>
           <li>06-03-2024 - Update the Landing Page and Custom Login Page</li>

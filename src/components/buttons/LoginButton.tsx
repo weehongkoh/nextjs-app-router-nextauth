@@ -10,8 +10,10 @@ const Icon = ({ provider }: { provider: string }) => {
 
   if (provider === "Google") {
     imagePath = "/images/icons/google.svg";
-  } else {
+  } else if (provider === "Discord") {
     imagePath = "/images/icons/discord.svg";
+  } else if (provider === "Auth0") {
+    imagePath = "/images/icons/auth0.svg";
   }
 
   return (
