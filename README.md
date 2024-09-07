@@ -16,10 +16,20 @@ If you just want to implement the OAuth provider only, this [OAuth branch](https
 
 ## Latest Implementation
 
-- 04 May, 2024 - Add Database Adapter on the Custom Page
+- 29-08-2024 - Add Auth0 Provider
+- 08-06-2024 - Add login credential on Custom Login
+- 04-05-2024 - Add database adapter on Custom Login
+- 06-03-2024 - Update the Landing Page and Custom Login Page
+- 06-03-2024 - Upgrade NPM Package to Latest Version
+- 09-02-2024 - Upgrade to NextJs 14
+- 26-05-2023 - NextJs 13 and NextAuth
 
-## Pages
+## Features
 
+- Providers
+    - [x] Google
+    - [x] Discord
+    - [x] Auth0
 - [x] Protected Page
 - [x] NextJs Middleware
 - [x] Database Adapter (PostgreSQL and Hasura)
@@ -42,6 +52,10 @@ GOOGLE_CLIENT_SECRET=
 
 DISCORD_CLIENT_ID=
 DISCORD_CLIENT_SECRET=
+
+AUTH0_CLIENT_ID=
+AUTH0_CLIENT_SECRET=
+AUTH0_ISSUER=
 
 HASURA_PROJECT_ENDPOINT=
 HASURA_ADMIN_SECRET=
