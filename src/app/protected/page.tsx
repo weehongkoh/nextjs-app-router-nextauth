@@ -1,8 +1,8 @@
 import LogoutButton from "@/components/buttons/LogoutButton";
-import { getServerSession } from "next-auth";
+import { auth } from "@/auth";
 
 export default async function Protected() {
-  const session = await getServerSession();
+  const session = await auth();
 
   return (
     <main className="max-w-2xl min-h-screen flex flex-col items-center mx-auto">

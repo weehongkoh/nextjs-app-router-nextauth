@@ -1,7 +1,7 @@
-import { getServerSession } from "next-auth";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
+import { auth } from "@/auth";
 import DiscordButton from "@/components/buttons/DiscordButton";
 import GoogleButton from "@/components/buttons/GoogleButton";
 import LoginButton from "@/components/buttons/LoginButton";
@@ -9,9 +9,9 @@ import LogoutButton from "@/components/buttons/LogoutButton";
 import Auth0Button from "@/components/buttons/Auth0";
 
 export default async function Home() {
-  const session = (await getServerSession()) || {};
+  const session = await auth();
 
-  if (Object.keys(session).length !== 0) {
+  if (session) {
     redirect("/protected");
   }
 
@@ -36,16 +36,12 @@ export default async function Home() {
             />
           </a>
           <div className="px-2"></div>
-          {Object.keys(session).length === 0 ? (
-            <LoginButton />
-          ) : (
-            <LogoutButton />
-          )}
+          {session ? <LogoutButton /> : <LoginButton auth={session} />}
         </div>
       </div>
 
       <h1 className="text-3xl font-bold text-center mb-8 lg:mb-0">
-        NextJs 14 App Router and Next Auth
+        NextJs 15 App Router and Auth.js (Next Auth)
       </h1>
 
       <div className="relative mb-8 flex place-items-center lg:my-0">
@@ -68,12 +64,13 @@ export default async function Home() {
           Changelog
         </h2>
         <ol className="font-mono">
+          <li>18-01-2025 - Upgrade to NextJs 15</li>
           <li>29-08-2024 - Add Auth0 Provider</li>
           <li>08-06-2024 - Add login credential on Custom Login</li>
           <li>04-05-2024 - Add database adapter on Custom Login</li>
           <li>06-03-2024 - Update the Landing Page and Custom Login Page</li>
           <li>06-03-2024 - Upgrade NPM Package to Latest Version</li>
-          <li>09-02-2024 - Upgrade to NextJs 14</li>
+          <li>09-02-2024 - Upgrade to Nextjs 15</li>
           <li>26-05-2023 - NextJs 13 and NextAuth</li>
         </ol>
       </div>

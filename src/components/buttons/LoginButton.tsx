@@ -1,9 +1,9 @@
 "use client";
 
-import { signIn } from "next-auth/react";
-
-import type { ClientSafeProvider } from "next-auth/react";
 import Image from "next/image";
+
+import { ClientSafeProvider } from "next-auth/lib/client";
+import { signIn } from "next-auth/react";
 
 const Icon = ({ provider }: { provider: string }) => {
   let imagePath = "";
@@ -27,12 +27,17 @@ const Icon = ({ provider }: { provider: string }) => {
   );
 };
 
-export default function LoginButton({ auth }: { auth?: ClientSafeProvider }) {
+export default function LoginButton({
+  auth,
+}: {
+  auth: ClientSafeProvider | null;
+}) {
+  console.log("Auth: ", auth);
   return (
     <button
       type="button"
       className="border shadow-1 rounded-md py-3 px-6 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-      onClick={() => signIn(auth?.id || "")}
+      onClick={() => signIn(auth?.id)}
     >
       {auth ? (
         <div className="flex items-center">

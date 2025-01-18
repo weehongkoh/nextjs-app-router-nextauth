@@ -6,8 +6,8 @@ import Provider from "@/components/Provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "NextJs 14 App Router and NextAuth",
-  description: "NextJs 14 App Router and NextAuth",
+  title: "NextJs 15 App Router and NextAuth",
+  description: "NextJs 15 App Router and NextAuth",
 };
 
 export default function RootLayout({
