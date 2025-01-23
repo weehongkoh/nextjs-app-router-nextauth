@@ -2,11 +2,12 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 
 import { auth } from "@/auth";
+import Auth0Button from "@/components/buttons/Auth0";
 import DiscordButton from "@/components/buttons/DiscordButton";
 import GoogleButton from "@/components/buttons/GoogleButton";
+import KeycloakButton from "@/components/buttons/KeycloakButton";
 import LoginButton from "@/components/buttons/LoginButton";
 import LogoutButton from "@/components/buttons/LogoutButton";
-import Auth0Button from "@/components/buttons/Auth0";
 
 export default async function Home() {
   const session = await auth();
@@ -58,6 +59,7 @@ export default async function Home() {
         <GoogleButton />
         <DiscordButton />
         <Auth0Button />
+        <KeycloakButton />
       </div>
       <div>
         <h2 className="text-2xl font-bold mb-3 mt-8 text-center lg:mt-0">
@@ -70,8 +72,6 @@ export default async function Home() {
           <li>04-05-2024 - Add database adapter on Custom Login</li>
           <li>06-03-2024 - Update the Landing Page and Custom Login Page</li>
           <li>06-03-2024 - Upgrade NPM Package to Latest Version</li>
-          <li>09-02-2024 - Upgrade to Nextjs 15</li>
-          <li>26-05-2023 - NextJs 13 and NextAuth</li>
         </ol>
       </div>
     </main>

@@ -1,10 +1,11 @@
 import { gql } from "graphql-request";
 
 import NextAuth from "next-auth";
-import Credentials from "next-auth/providers/credentials";
 import Auth0 from "next-auth/providers/auth0";
+import Credentials from "next-auth/providers/credentials";
 import Discord from "next-auth/providers/discord";
 import Google from "next-auth/providers/google";
+import Keycloak from "next-auth/providers/keycloak";
 
 type GraphQLVariables = {
   email: string;
@@ -90,6 +91,11 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     Google({
       clientId: process.env.AUTH_AUTH_GOOGLE_ID,
       clientSecret: process.env.AUTH_AUTH_GOOGLE_SECRET,
+    }),
+    Keycloak({
+      clientId: process.env.AUTH_KEYCLOAK_ID,
+      clientSecret: process.env.AUTH_KEYCLOAK_SECRET,
+      issuer: process.env.AUTH_KEYCLOAK_ISSUER,
     }),
   ],
   pages: {

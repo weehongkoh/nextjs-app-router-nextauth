@@ -16,14 +16,13 @@ If you just want to implement the OAuth provider only, this [OAuth branch](https
 
 ## Latest Implementation
 
+- 23-01-2025 - Add Keycloak Provider
 - 18-01-2025 - Upgrade to NextJs 15 and Auth.js (Next Auth)
 - 29-08-2024 - Add Auth0 Provider
 - 08-06-2024 - Add login credential on Custom Login
 - 04-05-2024 - Add database adapter on Custom Login
 - 06-03-2024 - Update the Landing Page and Custom Login Page
 - 06-03-2024 - Upgrade NPM Package to Latest Version
-- 09-02-2024 - Upgrade to Nextjs 15
-- 26-05-2023 - NextJs 13 and NextAuth
 
 ## Features
 
@@ -31,6 +30,8 @@ If you just want to implement the OAuth provider only, this [OAuth branch](https
     - [x] Google
     - [x] Discord
     - [x] Auth0
+    - [x] Keycloak
+    - [x] Credentials
 - [x] Protected Page
 - [x] NextJs Middleware
 - [x] Database Adapter (PostgreSQL and Hasura)
@@ -42,7 +43,9 @@ Clone this repository.
 Copy the `.env.example` and rename it as `.env` .
 Insert the value to respective field
 
-Run the following command to generate `NEXTAUTH_SECRET`, `openssl rand -base64 32`.
+Run the following command to generate `NEXTAUTH_SECRET`, `npx auth secret`.
+
+<p style="color: #808080;">*Check the reference to setup Keycloak server.*</p>
 
 ```
 NEXTAUTH_URL=
@@ -56,7 +59,7 @@ AUTH_DISCORD_SECRET=
 
 AUTH_AUTH0_ID=
 AUTH_AUTH0_SECRET=
-AUTH0_ISSUER=
+AUTH_AUTH0_ISSUER=
 
 AUTH_HASURA_GRAPHQL=
 AUTH_HASURA_SECRET=
@@ -65,3 +68,4 @@ AUTH_HASURA_SECRET=
 ### Reference
 - [Auth.js](https://authjs.dev/getting-started/installation?framework=Next.js)
 - [YouTube | How To Set Up Next Auth 5 in Next.js 15 [ project code included ] ](https://www.youtube.com/watch?v=xHQQ5I7E_H8&t=322s)
+- [Medium | Implementing Authentication in Next.js v13 Application with Keycloak](https://medium.com/inspiredbrilliance/implementing-authentication-in-next-js-v13-application-with-keycloak-part-1-f4817c53c7ef)
